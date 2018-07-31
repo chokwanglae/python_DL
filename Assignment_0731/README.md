@@ -63,8 +63,7 @@ if __name__ == '__main__':
 
 ```
   - 결과
-  
-<img src="https://github.com/twooopark/python_DL/blob/master/Assignment_0731/Figure_1.png" width="640px" height="480px" />
+  <img src="https://github.com/twooopark/python_DL/blob/master/Assignment_0731/Figure_1.png" width="640px" height="480px" />
   
 
 
@@ -96,11 +95,10 @@ if __name__ == '__main__':
     
   - 회귀분석 예제
     - 선형회귀
-```
-  입력(평수 크기)와 출력(가격)은 어떤 관계가 있는 지, 이 관계들이 어떤 형태를 이루는지 그래프로 보여졌습니다. 
-  입력(알고싶은 평수)에 따른 출력 결과(가격)를 알 수 있게 되었습니다.
-``` 
-
-<img src="https://github.com/twooopark/ML_Summary/blob/master/1-1_RegressionProblem.JPG" width="600px" height="300px" />
+    ```
+    입력(평수 크기)와 출력(가격)은 어떤 관계가 있는 지, 이 관계들이 어떤 형태를 이루는지 그래프로 보여졌습니다. 
+    입력(알고싶은 평수)에 따른 출력 결과(가격)를 알 수 있게 되었습니다.
+    ``` 
+    <img src="https://github.com/twooopark/ML_Summary/blob/master/1-1_RegressionProblem.JPG" width="600px" height="300px" />
  
 
