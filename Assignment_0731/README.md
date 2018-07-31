@@ -1,5 +1,6 @@
   
-* 과제1 : 데이터 1, 데이터 2, 데이터 3을 산점도로 출력, z-score를 이용해 표준화해서 산점도 3개를 비교하기 쉽게 합쳐서 결과를 출력하라. (데이터는 임의로 한다.)
+* 과제1 
+  > 데이터 1, 데이터 2, 데이터 3을 산점도로 출력, z-score를 이용해 표준화해서 산점도 3개를 비교하기 쉽게 합쳐서 결과를 출력하라. (데이터는 임의로 한다.)
 
 ```python
 from numpy.random import randn
@@ -61,7 +62,15 @@ if __name__ == '__main__':
     ex1()
 
 ```
-* 과제2 : PCA(Principal Component Analysis)에 대해 알아오시오.
+  - 결과
+  
+<img src="https://github.com/twooopark/python_DL/blob/master/Assignment_0731/Figure_1.png" width="640px" height="480px" />
+  
+
+
+
+* 과제2
+  > PCA(Principal Component Analysis)에 대해 알아오시오.
   -주성분 분석(PCA)
     - 목적 : 서로 상관관계가 있는 변수를 하나의 주성분(PC)으로 변환하는 것.
     - 변수의 값들의 변동성(분산)이 큰 순서대로 정렬을 할 수 있다.
@@ -76,4 +85,5 @@ if __name__ == '__main__':
     - 장점 : 가장 뚜렷한 특징만 뽑아낸다. 차원 축소를 통한 메모리, 연산 감소
     - 단점 : 주성분이 원 변수들을 섞어 만든 것이라 해석이 어렵다. 차원 축소를 통해 디테일이 손상된다.
     
-* 과제3 : 회귀분석 정의, 
+* 과제3
+  > 회귀분석 정의, 
