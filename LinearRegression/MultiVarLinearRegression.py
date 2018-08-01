@@ -1,7 +1,8 @@
-# Lab 4 Multi-variable linear regression
+# Multi-variable linear regression
 import tensorflow as tf
 tf.set_random_seed(777)  # for reproducibility
 
+# LinearRegression의 ex2의 다변량 버전
 def ex1():
     x1_data = [73., 93., 89., 96., 73.]
     x2_data = [80., 88., 91., 98., 66.]
@@ -28,7 +29,7 @@ def ex1():
     cost = tf.reduce_mean(tf.square(hypothesis - Y))
 
     # Minimize. Need a very small learning rate for this data set
-    optimizer = tf.train.GradientDescentOptimizer(learning_rate=1e-5)
+    optimizer = tf.train.GradientDescentOptimizer(learning_rate=1e-5) # 1*10^-5
     train = optimizer.minimize(cost)
 
     # Launch the graph in a session.
@@ -57,6 +58,8 @@ def ex1():
     Prediction:
      [ 148.15931702  186.8805542   179.63194275  195.81971741  144.45298767]
     '''
+
+# 중첩 리스트를 사용한 feed dictionary
 def ex2():
     x_data = [[73., 80., 75.],
               [93., 88., 93.],
@@ -130,5 +133,4 @@ def ex2():
      [ 194.35533142]
      [ 142.036026  ]]
     '''
-
-ex2()
+ex1()

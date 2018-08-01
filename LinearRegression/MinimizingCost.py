@@ -8,25 +8,37 @@ tf.set_random_seed(777)  # for reproducibility
 X = [1, 2, 3]
 Y = [1, 2, 3]
 
+
+# W(h(x)의 기울기)에 따른 h(x)를 그래프로 보여보자. (X축은 W, Y축은 h(x))
 def ex1():
     W = tf.placeholder(tf.float32)
 
     # Our hypothesis for linear model X * W
+    # 여기서 오차값(=입실론, =Y절편, =b)는 생략했다.
     hypothesis = X * W
 
-    # cost/loss function
+    # cost(loss) function
+    # 가설값과 예측값 차이의 제곱들의 평균
     cost = tf.reduce_mean(tf.square(hypothesis - Y))
 
     # Launch the graph in a session.
     sess = tf.Session()
 
-    # Variables for plotting cost function
+    # 그래프를 그리기 위한 값을 저장할 리스트
     W_history = []
     cost_history = []
+
     # Fit the line
     for i in range(-30, 50):
+        # 현재 가중치(기울기)
+        # [ -30*0.1, -29*0.1 ... 50*0.1 ]
         curr_W = i * 0.1
-        curr_cost = sess.run(cost, feed_dict={W:curr_W})
+
+        # 현재 비용
+        # 기울기가 -3인 경우부터, cost값을 구한다.
+        curr_cost = sess.run(cost, feed_dict={W : curr_W})
+
+        # cost와 W 값을 추가한다.
         W_history.append(curr_W)
         cost_history.append(curr_cost)
 
@@ -36,7 +48,7 @@ def ex1():
 
 
 
-
+# cost가 최소가 되는 W를 찾기위해 Gradient Descent를 적용해보자.
 def ex2():
     x_data = [1, 2, 3]
     y_data = [1, 2, 3]
@@ -44,15 +56,15 @@ def ex2():
     # Try to find values for W and b to compute y_data = W * x_data + b
     # We know that W should be 1 and b should be 0
     # But let's use TensorFlow to figure it out
+    # tf.random_normal([1]) : 랜덤값이 담긴 1차원의 배열을 반환한다.
     W = tf.Variable(tf.random_normal([1]), name='weight')
-
     X = tf.placeholder(tf.float32)
     Y = tf.placeholder(tf.float32)
 
     # Our hypothesis for linear model X * W
     hypothesis = X * W
 
-    # cost/loss function
+    # cost(loss) function
     cost = tf.reduce_mean(tf.square(hypothesis - Y))
 
     # Minimize: Gradient Descent using derivative: W -= learning_rate * derivative
@@ -66,6 +78,8 @@ def ex2():
     # Initializes global variables in the graph.
     sess.run(tf.global_variables_initializer())
 
+    # 랜덤으로 설정한 초기의 W값을 기울기 하강법을 적용한다.
+    # cost가 최소가 되는(오차값이 가장 작은) W를 구한다.
     for step in range(21):
         sess.run(update, feed_dict={X: x_data, Y: y_data})
         print(step, sess.run(cost, feed_dict={X: x_data, Y: y_data}), sess.run(W))
@@ -94,6 +108,8 @@ def ex2():
     20 2.34053e-11 [ 1.00000226]
     '''
 
+
+# GradientDescentOptimizer 함수를 사용해 ex2의 결과를 도출한다.
 def ex3():
     # Set wrong model weights
     W = tf.Variable(5.0)
@@ -129,4 +145,4 @@ def ex3():
     98 1.0
     99 1.0
     '''
-ex2()
+ex3()
