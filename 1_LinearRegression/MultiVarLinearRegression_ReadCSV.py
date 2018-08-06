@@ -107,6 +107,7 @@ def ex4():
     threads = tf.train.start_queue_runners(sess=sess, coord=coord)
 
     x_batch, y_batch = sess.run([train_x_batch, train_y_batch])
+
     for step in range(2001):
         cost_val, hy_val, _ = sess.run(
             [cost, hypothesis, train], feed_dict={X: x_batch, Y: y_batch})
