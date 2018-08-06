@@ -1,3 +1,6 @@
 .idea/
 venv/
+<<<<<<< HEAD
 5_LearningRate&Normalize/mnist_train.csv
+=======
+>>>>>>> 6beeac973c2a627b132410d6cfa009581584187c
