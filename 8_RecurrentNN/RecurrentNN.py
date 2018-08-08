@@ -148,4 +148,20 @@ def ex4():
 
             print(i, "loss: ", l, " Prediction: ", ''.join(result_str))
 
+# Really long sentence RNN
+def ex5():
+    sample = ("if you want to build a ship, don't drum up people together to collect"
+    "wood and don't assign them tasks and work, but rather teach them to long for"
+    "the endless immensity of the sea.")
+
+
+def ex6():
+    seed = 0
+    np.random.seed(seed)
+    # 원소가 9개인 numpy 배열을 생성한다.
+    # Y값은 0이 3개, 1은 6개로 비율은 1:2 이다 (불균형데이터)
+    X = np.array([-5, -3, -1, 1, 3, 5, 7, 9, 11])
+    Y = np.array([0, 0, 0, 1, 1, 1, 1, 1, 1])
+    splits = 3
+
 ex4()
